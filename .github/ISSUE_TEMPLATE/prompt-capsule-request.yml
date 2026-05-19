@@ -1,0 +1,19 @@
+name: Prompt Capsule Request
+description: Request a new prompt capsule or workflow injection pattern
+title: "[Capsule]: "
+labels: ["prompt-capsule", "request"]
+body:
+  - type: input
+    id: category
+    attributes:
+      label: Category
+      placeholder: mise-pr, git-locker, jeai, github-actions
+    validations:
+      required: true
+  - type: textarea
+    id: objective
+    attributes:
+      label: Objective
+      description: What should the capsule accomplish?
+    validations:
+      required: true

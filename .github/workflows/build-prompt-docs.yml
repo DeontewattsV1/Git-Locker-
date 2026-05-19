@@ -1,0 +1,31 @@
+name: Build Prompt Docs
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "prompt-capsules/**"
+      - "docs/**"
+      - "scripts/**"
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: python scripts/validate_prompt_capsules.py
+      - run: python scripts/build_prompt_index.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: prompt-docs
+          path: |
+            docs/PROMPT_INDEX.md
+            prompt-capsules/PROMPT_CAPSULES.md
