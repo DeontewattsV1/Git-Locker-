@@ -18,6 +18,30 @@ jobs:
       - name: Validate locker CSV
         run: python3 scripts/validate-locker.py
             - name: gh-large-releases-soap
+                        - name: github-actions-bot-signed-commit
+  # You may pin to the exact commit or the version.
+  # uses: magmanu/github-action-bot-signed-commit@fb2582c7c22a7183a95504156c4ac02bb734d6ed
+  uses: magmanu/github-action-bot-signed-commit@v1.0.4
+  with:
+    # If signing commits with Github Apps, provide the App token. Else, it defults to GITHUB_TOKEN.
+    TOKEN: # optional, default is ${{ github.token }}
+    # The repository owner (user/org)
+    TARGET_OWNER: # optional, default is ${{ github.repository_owner }}
+    # The repository where the signed commits will be pushed to.
+    TARGET_REPO: # optional, default is ${{ github.event.repository.name }}
+    # The branch where the signed commits will be pushed to.
+    TARGET_REF: # optional, default is ${{ github.head_ref || github.ref_name }}
+    # Absolute path to a text file containing the list of file paths to be committed.
+    FILE_LIST: 
+    # The absolute path for the working directory where the action will run.
+    WORKING_DIR: # optional, default is ${{ github.workspace }}
+    # If set to true, the action will push the commits but leave them orphans (the head won't move.)
+    IS_DRY_RUN: # optional
+    # If set to true, the action will create the target branch if it doesn't exist.
+    SHOULD_CREATE_NEW_BRANCH: # optional, default is true
+    # The commit message to use for the signed commits. Your message will be suffixed with a UTC human-friendly timestamp.
+    COMMIT_MESSAGE: # optional, default is Signed commit
+          
   # You may pin to the exact commit or the version.
   # uses: soap-phia/gh-large-releases@0ec3ffa311bc865aa7e280d76e0777cc0fddeee6
   uses: soap-phia/gh-large-releases@1
