@@ -6,18 +6,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
-### Added
-
--
-
-### Changed
-
--
-
-### Fixed
-
--
-
 ## [1.0.0] - 2026-05-19
 
 ### Added
@@ -32,3 +20,6 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Fail-closed prompt-injection detection in capsule validator
 - Testing skills for data integrity and README rendering validation
 - CONTRIBUTING.md, CODE_OF_CONDUCT.md, SUPPORT.md, CLAUDE.md
+
+[Unreleased]: https://github.com/DeontewattsV1/Git-Locker-/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/DeontewattsV1/Git-Locker-/releases/tag/v1.0.0
