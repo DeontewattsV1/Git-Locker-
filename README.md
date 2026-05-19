@@ -1,24 +1,36 @@
-<p align="center">
-  <img src="./assets/git-lockers-readme-hero.svg" alt="Git Lockers — Unlock the next repository" width="100%">
-</p>
+<div align="center">
 
-<h1 align="center">Git Lockers</h1>
+<img src="https://capsule-render.vercel.app/api?type=waving&height=200&section=header&text=Git%20Lockers&fontSize=56&fontAlignY=35&desc=Unlock%20the%20next%20repository&descAlignY=58&color=0:0D1117,50:161B22,100:1F6FEB&fontColor=FFFFFF" alt="Git Lockers header" />
 
-<p align="center">
-  <strong>Unlock the next repository.</strong>
-</p>
+<br/>
 
-<p align="center">
-  <a href="https://github.com/DeontewattsV1/Git-Locker-/actions/workflows/validate-locker.yml"><img src="https://github.com/DeontewattsV1/Git-Locker-/actions/workflows/validate-locker.yml/badge.svg" alt="Validate Locker"></a>
-  <a href="https://github.com/DeontewattsV1/Git-Locker-/actions/workflows/ci.yml"><img src="https://github.com/DeontewattsV1/Git-Locker-/actions/workflows/ci.yml/badge.svg" alt="Prompt Capsule CI"></a>
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/License-BSL--1.0-blue.svg" alt="License: BSL-1.0"></a>
-</p>
+<img src="./assets/git-lockers-readme-hero.svg" alt="Git Lockers — Unlock the next repository" width="100%">
 
-<p align="center">
-  Git Lockers is an interactive open-source environment for storing, exploring,<br>
-  validating, and activating reusable GitHub ideas, prompt capsules, workflows,<br>
-  repository concepts, and agent-ready build systems.
-</p>
+<br/>
+
+<img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=24&duration=2800&pause=900&color=1F6FEB&center=true&vCenter=true&width=700&lines=Unlock+the+next+repository;1%2C000+repo+seeds;1%2C000+prompt+capsules;Agent-ready+build+systems" alt="Typing SVG" />
+
+<br/>
+
+<a href="https://github.com/DeontewattsV1/Git-Locker-/actions/workflows/validate-locker.yml"><img src="https://github.com/DeontewattsV1/Git-Locker-/actions/workflows/validate-locker.yml/badge.svg" alt="Validate Locker"></a>
+<a href="https://github.com/DeontewattsV1/Git-Locker-/actions/workflows/ci.yml"><img src="https://github.com/DeontewattsV1/Git-Locker-/actions/workflows/ci.yml/badge.svg" alt="Prompt Capsule CI"></a>
+<a href="./LICENSE"><img src="https://img.shields.io/badge/License-BSL--1.0-blue.svg" alt="License: BSL-1.0"></a>
+
+<br/>
+
+<img src="https://img.shields.io/github/stars/DeontewattsV1/Git-Locker-?style=for-the-badge&color=1F6FEB&labelColor=0D1117" alt="Stars">
+<img src="https://img.shields.io/github/forks/DeontewattsV1/Git-Locker-?style=for-the-badge&color=161B22&labelColor=0D1117" alt="Forks">
+<img src="https://img.shields.io/github/last-commit/DeontewattsV1/Git-Locker-?style=for-the-badge&color=1F6FEB&labelColor=0D1117" alt="Last Commit">
+<img src="https://img.shields.io/github/repo-size/DeontewattsV1/Git-Locker-?style=for-the-badge&color=161B22&labelColor=0D1117" alt="Repo Size">
+<img src="https://visitor-badge.laobi.icu/badge?page_id=DeontewattsV1.Git-Locker-" alt="Visitors">
+
+<br/><br/>
+
+<strong>Git Lockers is an interactive open-source environment for storing, exploring,<br/>
+validating, and activating reusable GitHub ideas, prompt capsules, workflows,<br/>
+repository concepts, and agent-ready build systems.</strong>
+
+</div>
 
 ---
 
@@ -35,6 +47,8 @@
 - [Prompt Capsules](#prompt-capsules)
 - [Deployment](#deployment)
 - [Troubleshooting](#troubleshooting)
+- [Quick Stats](#quick-stats)
+- [Related Projects](#related-projects)
 - [Contributing](#contributing)
 - [Support](#support)
 - [License](#license)
@@ -113,7 +127,10 @@ $ python3 scripts/build_prompt_index.py
 
 ---
 
-## Repository Structure
+<details>
+<summary><strong>Repository Structure</strong></summary>
+
+<br/>
 
 ```text
 Git-Locker-/
@@ -167,6 +184,8 @@ Git-Locker-/
 ├── LICENSE                          # Boost Software License 1.0
 └── README.md                        # You are here
 ```
+
+</details>
 
 ---
 
@@ -272,6 +291,27 @@ graph TD
         H[(prompt-capsules.json)] --> I[validate_prompt_capsules.py]
         I --> J[build_prompt_index.py]
     end
+```
+
+### Prompt Capsule Lifecycle
+
+```mermaid
+sequenceDiagram
+    participant Author as Capsule Author
+    participant Schema as JSON Schema
+    participant Validator as validate_prompt_capsules.py
+    participant CI as GitHub Actions CI
+    participant Index as build_prompt_index.py
+    participant User as End User
+
+    Author->>Schema: Write capsule (GLP-NNNN)
+    Schema->>Validator: Validate structure & safety
+    Validator->>CI: Run anti-injection checks
+    CI-->>Author: Pass / Fail feedback
+    CI->>Index: Build prompt index docs
+    Index->>User: Discoverable via PROMPT_INDEX.md
+    User->>CI: Dispatch capsule via workflow
+    CI-->>User: Auditable execution output
 ```
 
 ### Key Components
@@ -398,7 +438,10 @@ via Settings → General → Social Preview.
 
 ---
 
-## Troubleshooting
+<details>
+<summary><strong>Troubleshooting</strong></summary>
+
+<br/>
 
 | Symptom | Cause | Fix |
 |---|---|---|
@@ -407,6 +450,36 @@ via Settings → General → Social Preview.
 | Prompt validation fails | Prompt < 300 chars or bad ID format | Check `GLP-NNNN` pattern |
 | Workflow not triggering | Workflow disabled by GitHub | Run `enable-all-workflows.yml` |
 | CSV encoding issues | Non-UTF-8 characters | Save as UTF-8 without BOM |
+
+</details>
+
+---
+
+## Quick Stats
+
+<div align="center">
+
+<img src="https://github-readme-stats.vercel.app/api?username=DeontewattsV1&show_icons=true&theme=github_dark&bg_color=0D1117&title_color=1F6FEB&icon_color=1F6FEB&text_color=FFFFFF&border_color=161B22" alt="GitHub Stats" />
+
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=DeontewattsV1&theme=github-dark-blue&background=0D1117&ring=1F6FEB&fire=1F6FEB&currStreakLabel=1F6FEB&border=161B22" alt="GitHub Streak" />
+
+<br/>
+
+<img src="https://github-profile-trophy.vercel.app/?username=DeontewattsV1&theme=darkhub&no-bg=true&no-frame=true&column=6" alt="Trophies" />
+
+</div>
+
+---
+
+## Related Projects
+
+<div align="center">
+
+<a href="https://github.com/DeontewattsV1/Harmonic-Visual-Environment-Journal-and-HIMM"><img src="https://img.shields.io/badge/Harmonic_Visual_Environment_Journal-1A1A2E?style=for-the-badge&logo=github&logoColor=white" alt="Harmonic Visual Environment Journal"></a>
+<a href="https://github.com/DeontewattsV1/The-Architects-Signal"><img src="https://img.shields.io/badge/The_Architects_Signal-050505?style=for-the-badge&logo=github&logoColor=white" alt="The Architects Signal"></a>
+<a href="https://github.com/DeontewattsV1/Wildfire-The-Architecture-of-Surrender"><img src="https://img.shields.io/badge/Wildfire-090D14?style=for-the-badge&logo=github&logoColor=white" alt="Wildfire"></a>
+
+</div>
 
 ---
 
@@ -431,9 +504,12 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for full details.
 
 ---
 
-## Support
+<details>
+<summary><strong>Support This Project</strong></summary>
 
-You can support this project via any of the links below:
+<br/>
+
+<div align="center">
 
 [![Patreon](https://img.shields.io/badge/Patreon-Donate-FF424D?logo=patreon&logoColor=white)](https://www.patreon.com/cw/GetitD)
 [![Open Collective](https://img.shields.io/badge/Open%20Collective-Support-FF6F00?logo=open-collective&logoColor=white)](https://opencollective.com/deontewattsv1)
@@ -446,6 +522,10 @@ You can support this project via any of the links below:
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/deontewattsv1)
 [![thanks.dev](https://img.shields.io/badge/thanks.dev-Say%20Thanks-3DA639?logo=github&logoColor=white)](https://thanks.dev/e/gh/deontewattsv1)
 
+</div>
+
+</details>
+
 ---
 
 ## License
@@ -454,12 +534,21 @@ SPDX: BSL-1.0 — see [LICENSE](./LICENSE).
 
 Content and data are shared under CC-BY-4.0. Code and scripts are MIT-licensed.
 
-https://sonarcloud.io/api/project_badges/quality_gate?project=DeontewattsV1_Git-Locker-
-
 ---
 
-<p align="center">
-  <img src="./assets/git-lockers-logo.svg" alt="Git Lockers" width="64">
-  <br>
-  <strong>Git Lockers — Unlock the next repository.</strong>
-</p>
+<div align="center">
+
+> **Author:** Deonte Watts
+> **ORCID:** [0009-0005-8586-3650](https://orcid.org/0009-0005-8586-3650)
+
+<br/>
+
+![Quote](https://quotes-github-readme.vercel.app/api?type=horizontal&theme=dark)
+
+<br/>
+
+<img src="https://capsule-render.vercel.app/api?type=waving&height=150&section=footer&color=0:0D1117,50:161B22,100:1F6FEB" alt="Footer wave" />
+
+<strong>Git Lockers — Unlock the next repository.</strong>
+
+</div>
