@@ -21,15 +21,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
-      - uses: actions/checkout@v6
-      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - run: python scripts/validate_prompt_capsules.py
       - run: python scripts/build_prompt_index.py
       - run: python scripts/list_workflows.py
       - uses: actions/upload-artifact@v4
-      - uses: actions/upload-artifact@v7
         with:
           name: prompt-index
           path: docs/PROMPT_INDEX.md
