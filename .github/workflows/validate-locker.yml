@@ -15,5 +15,10 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
       - name: Validate locker CSV
         run: python3 scripts/validate-locker.py
