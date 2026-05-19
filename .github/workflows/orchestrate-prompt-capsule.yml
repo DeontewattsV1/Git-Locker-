@@ -1,0 +1,57 @@
+name: Orchestrate Prompt Capsule
+
+on:
+  workflow_dispatch:
+    inputs:
+      capsule_id:
+        description: "Prompt capsule ID, e.g. GLP-0001"
+        required: true
+        type: string
+      dry_run:
+        description: "Validate and package only"
+        required: true
+        default: true
+        type: boolean
+  repository_dispatch:
+    types: [prompt-capsule]
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  capsule:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      CAPSULE_ID: ${{ inputs.capsule_id || github.event.client_payload.capsule_id }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: python scripts/validate_prompt_capsules.py
+      - name: Print selected capsule
+        run: |
+          python - <<'PY'
+          import json, os
+          cid = os.environ["CAPSULE_ID"]
+          data = json.load(open("prompt-capsules/prompt-capsules.json", encoding="utf-8"))
+          hit = next((r for r in data if r["id"] == cid), None)
+          if not hit:
+              raise SystemExit(f"Capsule not found: {cid}")
+          print(f"{hit['id']} — {hit['title']}")
+          print(f"Command: {hit['command']}")
+          print(f"Agent: {hit['agent_role']}")
+          print(f"Risk: {hit['risk']}")
+          print("\n--- PROMPT ---\n")
+          print(hit["prompt"])
+          PY
+      - run: python scripts/build_prompt_index.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: selected-prompt-capsule
+          path: |
+            prompt-capsules/prompt-capsules.json
+            prompt-capsules/prompt-capsules.csv
+            docs/PROMPT_INDEX.md
