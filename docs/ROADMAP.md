@@ -1,36 +1,36 @@
 # Git Lockers Roadmap
 
-## Phase 1 — Public foundation
+## Phase 1 — Public Foundation
 
 - [x] Expand README
 - [x] Add public-safe chat history ledger
 - [x] Add brand identity documentation
 - [x] Add artifact index
 - [x] Add privacy redaction notes
-- [ ] Add visual assets into `assets/`
-- [ ] Add locker data files into `data/`
-- [ ] Add prompt capsule package files
+- [x] Add visual assets into `assets/`
+- [x] Add locker data files into `data/`
+- [x] Add prompt capsule package files
 
-## Phase 2 — Locker system
+## Phase 2 — Locker System
 
-- [ ] Add `LOCKER.md`
-- [ ] Add `data/git-locker.csv`
-- [ ] Add `data/git-locker.json`
-- [ ] Add schema validation
-- [ ] Add issue template for new locker requests
-- [ ] Add pull request template
-- [ ] Add contribution guide
+- [x] Add `LOCKER.md`
+- [x] Add `data/git-locker.csv`
+- [x] Add `data/git-locker.json`
+- [x] Add schema validation
+- [x] Add issue template for new locker requests
+- [x] Add pull request template
+- [x] Add contribution guide
 
-## Phase 3 — Prompt capsules
+## Phase 3 — Prompt Capsules
 
-- [ ] Add controlled prompt capsules
-- [ ] Add category-specific prompt capsule docs
-- [ ] Add prompt capsule JSON schema
-- [ ] Add prompt capsule validation script
-- [ ] Add prompt index builder
-- [ ] Add workflow validation
+- [x] Add controlled prompt capsules
+- [x] Add category-specific prompt capsule docs
+- [x] Add prompt capsule JSON schema
+- [x] Add prompt capsule validation script
+- [x] Add prompt index builder
+- [x] Add workflow validation
 
-## Phase 4 — Interactive environment
+## Phase 4 — Interactive Environment
 
 - [ ] Create static web viewer for lockers
 - [ ] Add search and filtering
@@ -38,9 +38,9 @@
 - [ ] Add workflow page
 - [ ] Add validation and policy-check page
 
-## Phase 5 — Repository maturity
+## Phase 5 — Repository Maturity
 
-- [ ] Add social preview image
+- [x] Add social preview image
 - [ ] Add walkthrough documentation
 - [ ] Add release notes
 - [ ] Add contributor showcase

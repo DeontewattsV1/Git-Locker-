@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Git Locker Prompt Capsule",
+  "type": "object",
+  "required": [
+    "id",
+    "command",
+    "title",
+    "category_slug",
+    "category",
+    "agent_role",
+    "operation_slug",
+    "operation",
+    "risk",
+    "github_action",
+    "workflow_dispatch_input",
+    "expected_output",
+    "prompt"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^GLP-[0-9]{4}$"
+    },
+    "command": {
+      "type": "string",
+      "pattern": "^/inject [a-z0-9-]+\\.[a-z0-9-]+$"
+    },
+    "risk": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "prompt": {
+      "type": "string",
+      "minLength": 300
+    }
+  }
+}

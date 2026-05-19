@@ -1,47 +1,57 @@
 # Artifact Index
 
-This repository was developed alongside several generated artifact packages. Some packages were produced in the ChatGPT sandbox and may need to be uploaded manually if not already committed.
+This repository contains all generated artifact packages, now committed and
+organized in their canonical locations.
 
-## Generated packages
+## Committed Packages
 
-| Artifact | Purpose | Status |
+| Artifact | Purpose | Location |
 |---|---|---|
-| `git-locker-repo.zip` | Initial Git Locker repository scaffold with 1,000 repo concepts | Generated externally |
-| `git-locker-prompt-capsules.zip` | 1,000 controlled `/inject` prompt capsules with GitHub Actions | Generated externally |
-| `git-lockers-brand-assets.zip` | Logo, social preview, README hero banner | Generated externally |
+| Brand Assets | Logo, social preview, README hero banner | `assets/` |
+| Git Locker Data | 1,000 repo concept seeds (CSV + JSON) | `data/` |
+| Prompt Capsules | 1,000 controlled `/inject` capsules | `prompt-capsules/` |
+| Schemas | JSON Schema for lockers and capsules | `schema/` |
+| Validation Scripts | Python validators and index builder | `scripts/` |
+| GitHub Actions | CI, orchestration, docs build workflows | `.github/workflows/` |
+| Issue Templates | Locker item and capsule request forms | `.github/ISSUE_TEMPLATE/` |
+| PR Template | Standard pull request form | `.github/PULL_REQUEST_TEMPLATE.md` |
 
-## Recommended repository placement
+## Repository Layout
 
 ```text
 assets/
   git-lockers-logo.svg
   git-lockers-logo.png
   git-lockers-social-preview-1280x640.png
+  git-lockers-social-preview-1280x640.svg
   git-lockers-readme-hero.svg
   git-lockers-readme-hero.png
 
-docs/
-  BRAND_IDENTITY.md
-  ARTIFACT_INDEX.md
-  PRIVACY_REDACTIONS.md
-  ROADMAP.md
+data/
+  git-locker.csv
+  git-locker.json
 
 prompt-capsules/
   prompt-capsules.json
   prompt-capsules.csv
   PROMPT_CAPSULES.md
+  by-category/
+
+schema/
+  git-locker.schema.json
+  prompt-capsule.schema.json
+
+scripts/
+  validate-locker.py
+  validate_prompt_capsules.py
+  build_prompt_index.py
+  list_workflows.py
+  enable_workflows.sh
 
 .github/workflows/
+  validate-locker.yml
   ci.yml
   orchestrate-prompt-capsule.yml
   enable-all-workflows.yml
   build-prompt-docs.yml
 ```
-
-## Next manual upload checklist
-
-- [ ] Upload brand assets into `assets/`
-- [ ] Upload prompt capsule package contents into `prompt-capsules/`, `scripts/`, `schema/`, and `.github/workflows/`
-- [ ] Upload Git Locker data into `data/` and `LOCKER.md`
-- [ ] Enable GitHub Actions after reviewing permissions
-- [ ] Set GitHub social preview using `git-lockers-social-preview-1280x640.png`

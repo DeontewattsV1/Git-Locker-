@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Git Locker Item",
+  "type": "object",
+  "required": [
+    "id",
+    "repo_name",
+    "domain",
+    "primitive_type",
+    "concept",
+    "foundational_primitive",
+    "first_commit_mvp",
+    "starter_command",
+    "status",
+    "license",
+    "contribution_path"
+  ],
+  "properties": {
+    "id": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "repo_name": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]+[a-z0-9]$"
+    },
+    "domain": {
+      "type": "string"
+    },
+    "primitive_type": {
+      "type": "string"
+    },
+    "concept": {
+      "type": "string",
+      "minLength": 20
+    },
+    "foundational_primitive": {
+      "type": "string"
+    },
+    "first_commit_mvp": {
+      "type": "string"
+    },
+    "starter_command": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "open-seed-unverified",
+        "research-needed",
+        "validated-name",
+        "claimed",
+        "built",
+        "deprecated"
+      ]
+    },
+    "license": {
+      "type": "string"
+    },
+    "contribution_path": {
+      "type": "string"
+    }
+  },
+  "additionalProperties": false
+}

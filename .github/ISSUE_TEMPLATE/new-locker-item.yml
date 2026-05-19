@@ -1,0 +1,50 @@
+name: New Locker Item
+description: Propose a new repo seed for Git Locker
+title: "[Locker Item]: "
+labels: ["locker-item", "proposal"]
+body:
+  - type: input
+    id: repo_name
+    attributes:
+      label: Proposed repo name
+      placeholder: aether-agent-protocol
+    validations:
+      required: true
+  - type: dropdown
+    id: primitive_type
+    attributes:
+      label: Primitive type
+      options:
+        - protocol
+        - kernel
+        - ledger
+        - simulator
+        - compiler
+        - index
+        - canvas
+        - agent
+        - guardian
+        - other
+    validations:
+      required: true
+  - type: textarea
+    id: concept
+    attributes:
+      label: Concept
+      description: Describe the repo seed in one or two sentences.
+    validations:
+      required: true
+  - type: textarea
+    id: mvp
+    attributes:
+      label: First Commit / MVP
+      description: What should the first working commit prove?
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Verification
+      options:
+        - label: I searched GitHub for obvious name conflicts.
+        - label: I understand this is a proposal, not a verified uniqueness claim.
