@@ -1,0 +1,23 @@
+# Git Locker CODEOWNERS
+# These owners are automatically requested for review on PRs.
+
+# Default owner for everything
+* @DeontewattsV1
+
+# Data files
+/data/ @DeontewattsV1
+/schema/ @DeontewattsV1
+
+# Prompt capsules
+/prompt-capsules/ @DeontewattsV1
+
+# CI and workflows
+/.github/ @DeontewattsV1
+
+# Validation scripts
+/scripts/ @DeontewattsV1
+
+# Documentation
+/docs/ @DeontewattsV1
+README.md @DeontewattsV1
+CONTRIBUTING.md @DeontewattsV1
