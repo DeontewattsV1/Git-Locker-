@@ -1,0 +1,8 @@
+{
+  "event_type": "prompt-capsule",
+  "client_payload": {
+    "capsule_id": "GLP-0001",
+    "source": "trusted-automation",
+    "dry_run": true
+  }
+}

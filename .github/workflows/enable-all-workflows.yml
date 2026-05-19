@@ -1,0 +1,27 @@
+name: Enable All Workflows
+
+on:
+  workflow_dispatch:
+    inputs:
+      confirm:
+        description: "Type ENABLE to enable all disabled workflows"
+        required: true
+        type: string
+  repository_dispatch:
+    types: [enable-workflows]
+
+permissions:
+  contents: read
+  actions: write
+
+jobs:
+  enable:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: ${{ github.event_name == 'repository_dispatch' || inputs.confirm == 'ENABLE' }}
+    steps:
+      - uses: actions/checkout@v6
+      - name: Enable workflows through GitHub API
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: bash scripts/enable_workflows.sh
