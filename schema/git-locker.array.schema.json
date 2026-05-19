@@ -1,0 +1,9 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Git Locker (Array)",
+  "description": "Schema for data/git-locker.json: an array of Git Locker Items. Each element conforms to git-locker.schema.json.",
+  "type": "array",
+  "items": {
+    "$ref": "git-locker.schema.json"
+  }
+}
