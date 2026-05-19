@@ -23,5 +23,5 @@ lines += ["", "## All Capsules", "", "| ID | Command | Category | Agent | Risk |
 for r in data:
     lines.append(f"| {r['id']} | `{r['command']}` | {r['category']} | {r['agent_role']} | {r['risk']} | {r['operation']} |")
 
-Path("docs/PROMPT_INDEX.md").write_text("\\n".join(lines) + "\\n", encoding="utf-8")
+Path("docs/PROMPT_INDEX.md").write_text("\n".join(lines) + "\n", encoding="utf-8")
 print("Built docs/PROMPT_INDEX.md")
