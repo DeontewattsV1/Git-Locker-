@@ -514,7 +514,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for full details.
 [![Patreon](https://img.shields.io/badge/Patreon-Donate-FF424D?logo=patreon&logoColor=white)](https://www.patreon.com/cw/GetitD)
 [![Open Collective](https://img.shields.io/badge/Open%20Collective-Support-FF6F00?logo=open-collective&logoColor=white)](https://opencollective.com/deontewattsv1)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Coffee-29ABE0?logo=ko-fi&logoColor=white)](https://ko-fi.com/deontewattsv1)
-[![Tidelift](https://img.shields.io/badge/Tidelift-Support-0052A7?logo=tidelift&logoColor=white)](https://sonarcloud.io/organizations/deontewattsv1/)
+[![Tidelift](https://img.shields.io/badge/Tidelift-Support-0052A7?logo=tidelift&logoColor=white)](https://tidelift.com/subscription/pkg/pypi-deontewattsv1)
 [![LFX Crowdfunding](https://img.shields.io/badge/LFX-Crowdfunding-2B6CB0)](https://crowdfunding.lfx.linuxfoundation.org/deontewattssV1)
 [![Liberapay](https://img.shields.io/badge/Liberapay-Donate-1D9D74?logo=liberapay&logoColor=white)](https://liberapay.com/DeontewattsV1/)
 [![IssueHunt](https://img.shields.io/badge/IssueHunt-Bounties-24292E?logo=github&logoColor=white)](https://issuehunt.io/profiles/deontewattsv1)
@@ -532,7 +532,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for full details.
 
 SPDX: BSL-1.0 — see [LICENSE](./LICENSE).
 
-Content and data are shared under CC-BY-4.0. Code and scripts are MIT-licensed.
+All repository contents are covered by the Boost Software License 1.0.
 
 ---
 
