@@ -15,6 +15,7 @@
 <a href="https://github.com/DeontewattsV1/Git-Locker-/actions/workflows/validate-locker.yml"><img src="https://github.com/DeontewattsV1/Git-Locker-/actions/workflows/validate-locker.yml/badge.svg" alt="Validate Locker"></a>
 <a href="https://github.com/DeontewattsV1/Git-Locker-/actions/workflows/ci.yml"><img src="https://github.com/DeontewattsV1/Git-Locker-/actions/workflows/ci.yml/badge.svg" alt="Prompt Capsule CI"></a>
 <a href="./LICENSE"><img src="https://img.shields.io/badge/License-BSL--1.0-blue.svg" alt="License: BSL-1.0"></a>
+<a href="https://sonarcloud.io/dashboard?id=DeontewattsV1_Git-Locker-"><img src="https://img.shields.io/badge/SonarCloud-Quality-F3702A?logo=sonarcloud&logoColor=white" alt="SonarCloud"></a>
 
 <br/>
 
@@ -514,7 +515,6 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md) for full details.
 [![Patreon](https://img.shields.io/badge/Patreon-Donate-FF424D?logo=patreon&logoColor=white)](https://www.patreon.com/cw/GetitD)
 [![Open Collective](https://img.shields.io/badge/Open%20Collective-Support-FF6F00?logo=open-collective&logoColor=white)](https://opencollective.com/deontewattsv1)
 [![Ko-fi](https://img.shields.io/badge/Ko--fi-Coffee-29ABE0?logo=ko-fi&logoColor=white)](https://ko-fi.com/deontewattsv1)
-[![SonarCloud](https://img.shields.io/badge/SonarCloud-Quality-F3702A?logo=sonarcloud&logoColor=white)](https://sonarcloud.io/dashboard?id=DeontewattsV1_Git-Locker-)
 [![LFX Crowdfunding](https://img.shields.io/badge/LFX-Crowdfunding-2B6CB0)](https://crowdfunding.lfx.linuxfoundation.org/deontewattssV1)
 [![Liberapay](https://img.shields.io/badge/Liberapay-Donate-1D9D74?logo=liberapay&logoColor=white)](https://liberapay.com/DeontewattsV1/)
 [![IssueHunt](https://img.shields.io/badge/IssueHunt-Bounties-24292E?logo=github&logoColor=white)](https://issuehunt.io/profiles/deontewattsv1)
