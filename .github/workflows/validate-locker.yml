@@ -17,3 +17,37 @@ jobs:
       - uses: actions/checkout@v6
       - name: Validate locker CSV
         run: python3 scripts/validate-locker.py
+            - name: gh-large-releases-soap
+  # You may pin to the exact commit or the version.
+  # uses: soap-phia/gh-large-releases@0ec3ffa311bc865aa7e280d76e0777cc0fddeee6
+  uses: soap-phia/gh-large-releases@1
+  with:
+    # Repository to make releases against, in <owner>/<repo> format.
+    repository: # optional, default is ${{ github.repository }}
+    # A list of files to upload to the release. Glob syntax may be used here.
+    files: 
+    # The GitHub access token to use.
+    token: # optional, default is ${{ github.token }}
+    # The path to the default working directory.
+    workspace: # optional, default is ${{ github.workspace }}
+    # Override the URL to the Cloudflare Worker that serves the release files.
+    worker_url: # optional
+    # The name of the tag.
+    tag_name: # optional, default is ${{ github.ref }}
+    # Specifies the commitish value that determines where the Git tag is created from.
+    target_commitish: # optional
+    # The name of the release.
+    name: # optional
+    # Text describing the contents of the release.
+    body: # optional
+    # `true` to create a draft (unpublished) release, `false` to create a published one.
+    draft: # optional
+    # `true` to identify the release as a prerelease. `false` to identify the release as a full release.
+    prerelease: # optional
+    # Specifies whether this release should be set as the latest release for the repository.
+    make_latest: # optional
+    # Whether to automatically generate the name and body for this release.
+    generate_release_notes: # optional
+    # If specified, a discussion of the specified category is created and linked to the release.
+    discussion_category_name: # optional
+          
