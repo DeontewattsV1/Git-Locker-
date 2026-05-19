@@ -454,6 +454,8 @@ SPDX: BSL-1.0 — see [LICENSE](./LICENSE).
 
 Content and data are shared under CC-BY-4.0. Code and scripts are MIT-licensed.
 
+https://sonarcloud.io/api/project_badges/quality_gate?project=DeontewattsV1_Git-Locker-
+
 ---
 
 <p align="center">
