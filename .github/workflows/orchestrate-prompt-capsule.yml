@@ -48,7 +48,7 @@ jobs:
           print(hit["prompt"])
           PY
       - run: python scripts/build_prompt_index.py
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: selected-prompt-capsule
           path: |
