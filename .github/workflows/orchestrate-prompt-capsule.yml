@@ -26,6 +26,8 @@ jobs:
     env:
       CAPSULE_ID: ${{ inputs.capsule_id || github.event.client_payload.capsule_id }}
     steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v5
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v6
         with:
