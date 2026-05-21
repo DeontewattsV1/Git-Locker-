@@ -1,0 +1,16 @@
+            - name: Auto-PR AI Code Fixer
+  # You may pin to the exact commit or the version.
+  # uses: matmulai/auto-pr@40077ece3df5a80462256482dfac323f556f0414
+  uses: matmulai/auto-pr@v.2
+  with:
+    # OpenAI API key
+    openai-api-key: 
+    # Command to run tests
+    test-command: # optional, default is pytest
+    # Command to run linting
+    lint-command: # optional, default is pylint **/*.py --exit-zero
+    # Maximum fix attempts per file
+    max-attempts: # optional, default is 3
+    # OpenAI model to use
+    openai-model: # optional, default is gpt-3.5-turbo
+          
