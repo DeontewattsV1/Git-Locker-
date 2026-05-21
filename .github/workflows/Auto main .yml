@@ -1,0 +1,8 @@
+            - name: Auto Merge EIP
+  # You may pin to the exact commit or the version.
+  # uses: Woodpile37/EIP-Bot@83def55233002790da6746afabe4724b8ee4f940
+  uses: Woodpile37/EIP-Bot@1.1.1
+  with:
+    # The Github token to be used by this bot when merging, posting comments, or requesting reviewers
+    GITHUB-TOKEN: 
+          
