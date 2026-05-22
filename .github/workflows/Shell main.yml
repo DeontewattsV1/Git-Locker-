@@ -1,0 +1,10 @@
+            - name: Dynamic Shell
+  # You may pin to the exact commit or the version.
+  # uses: ktakashi/dynamic-shell@84c2eac03a0b54c4b259cfb2ae4061913b86a958
+  uses: ktakashi/dynamic-shell@v1.0.0
+  with:
+    # Custom shell command, e.g. `bash`
+    shell: 
+    # Shell command string
+    run: 
+          
