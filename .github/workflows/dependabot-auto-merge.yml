@@ -19,12 +19,16 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Get PR details
-        id: pr-details
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          PR_TITLE: ${{ github.event.pull_request.title }}
+          PR_BASE: ${{ github.event.pull_request.base.ref }}
+          PR_HEAD: ${{ github.event.pull_request.head.ref }}
         run: |
-          echo "PR Number: ${{ github.event.pull_request.number }}"
-          echo "PR Title: ${{ github.event.pull_request.title }}"
-          echo "base: ${{ github.event.pull_request.base.ref }}"
-          echo "head: ${{ github.event.pull_request.head.ref }}"
+          echo "PR Number: $PR_NUMBER"
+          echo "PR Title: $PR_TITLE"
+          echo "base: $PR_BASE"
+          echo "head: $PR_HEAD"
       
       - name: Wait for CI checks to complete
         uses: actions/github-script@v7
@@ -117,11 +121,14 @@ jobs:
             
             // Merge the PR
             try {
+              const safeTitle = context.payload.pull_request.title
+                .replace(/"/g, '\\"')
+                .replace(/\n/g, ' ');
               await github.rest.pulls.merge({
                 ...context.repo,
                 pull_number,
                 merge_method: 'squash',
-                commit_title: `squash: ${pr.title} (#${pull_number}) [bot]`
+                commit_title: `squash: ${safeTitle} (#${pull_number}) [bot]`
               });
               console.log('PR merged successfully');
               core.setOutput('merged', true);
